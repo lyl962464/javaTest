@@ -42,9 +42,7 @@ public class MapTest {
                 int value = ((Integer) map.get(num)).intValue();
                 map.put(num, new Integer(value + 1));
             }
-
         }
-
         //        获取出现次数最多
         Collection collection = map.values();
         Integer maxOCount =(Integer) Collections.max(collection);
@@ -59,7 +57,6 @@ public class MapTest {
             Integer key = (Integer) entry.getKey();
             Integer value = (Integer) entry.getValue();
             // 值的出现次数，如果等于最大的出现的次数的时候，将该值添加到集合当中去。
-
             if (value.intValue() == maxOCount.intValue()){
                 list.add(key);
             }
