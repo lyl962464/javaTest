@@ -1,7 +1,5 @@
 package com.syaaa.demo01;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @ClassName Java8Demo04
@@ -12,24 +10,13 @@ import java.util.List;
  **/
 public class Java8Demo04 {
     public static void main(String[] args) {
-        List names = new ArrayList();
-        names.add("Mahesh");
-        names.add("Suresh");
-        names.add("Ramesh");
-        names.add("Naresh");
-        names.add("Kalpesh");
-
-        names.forEach(System.out::println);
-
-
-
-
-
+        String str = "adfasdf";
+        GetList g = str::toUpperCase;
+        System.out.println(g.getList());
     }
 
-    class  GetList{
-        public  void getList(List names){
-            names.forEach(System.out::println);
-        }
+    @FunctionalInterface
+    interface  GetList{
+        String getList();
     }
 }
