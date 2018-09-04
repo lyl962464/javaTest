@@ -12,7 +12,16 @@ import java.util.function.Supplier;
 public class StudentTest {
     public static void main(String[] args) {
         Student student = new Student("张三",11,11.0);
-        Supplier<String> s  = student::getStudentName;
-        System.out.println(s.get());
+//        Supplier<String> s  = student::getStudentName;
+//        String name =s.get();
+//        IStudent stu;
+//        stu = ()-> {
+//          if("张三".equals(name)){
+//              Supplier<Double> score  = student::getStudentScore;
+//              return score;
+//          }
+//          return null;
+//        };
+//        stu.getScore(name);
     }
 }
