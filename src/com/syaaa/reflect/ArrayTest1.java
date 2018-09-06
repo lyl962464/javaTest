@@ -1,4 +1,4 @@
-package com.syaaa.array;
+package com.syaaa.reflect;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

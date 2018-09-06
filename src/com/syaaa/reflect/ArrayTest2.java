@@ -1,4 +1,4 @@
-package com.syaaa.array;
+package com.syaaa.reflect;
 
 import java.lang.reflect.Array;
 
@@ -21,7 +21,7 @@ public class ArrayTest2 {
 //        创建一个三维的数组对象，dims指的是维度
         Object array = Array.newInstance(Integer.TYPE,dims);
         Object objArray = Array.get(array,3);
-        Class<?> classType = objArray.getClass().getComponentType();
+//        Class<?> classType = objArray.getClass().getComponentType();
 
         objArray = Array.get(objArray, 5);
         Array.setInt(objArray,10,37);
