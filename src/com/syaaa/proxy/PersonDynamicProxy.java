@@ -9,6 +9,7 @@ import java.lang.reflect.Proxy;
  * @Date 15:53   2018-9-7
  * @Version 1.0
  **/
+
 public class PersonDynamicProxy {
 
     public static void main(String[] args) {
