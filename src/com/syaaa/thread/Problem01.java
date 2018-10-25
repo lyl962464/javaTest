@@ -9,10 +9,13 @@ public class Problem01 {
     /**
      *
      * 问题：
-     *      创建两个线程，其中一个输出1-52，另外一个输出A-Z。输出格式要求：12A 34B 56C 78D
+     *      创建两个线程，其中一个输出1-52，另外一个输出A-Z。
+     *      输出格式要求：12A 34B 56C 78D
      *
      * 分析：
-     *       需要创建两个线程，一个进行数字的输出，另一个进行字符的输出
+     *       需要创建两个线程，一个进行数字的输出，另一个进行字符的输出。
+     *       主要是两个线程之间的阻塞和唤醒的操作需要考虑清楚
+     *       在什么时候进行线程的唤醒，在什么时候进行线程的阻塞
      *
      *
      *
@@ -23,6 +26,10 @@ public class Problem01 {
         Object object = new Object();
         new Thread(new Number(object)).start();
         new Thread(new Character(object)).start();
+
+        /**/
+        new Thread(){}.start();
+
     }
 
 
@@ -51,10 +58,12 @@ class Number implements Runnable{
             int size =53;
             for (int i = 1; i < size; i++) {
 
+                /*当i为奇数的时候，输出换行*/
                 if (i>1&&i%2==1) {
                     System.out.println(" ");
                 }
                 System.out.print(i);
+                /*i为偶数时，进行数字阻塞*/
                 if (i%2 == 0) {
                     /*先进行锁的释放，唤醒其他的线程，再使本线程阻塞*/
                     object.notifyAll();
